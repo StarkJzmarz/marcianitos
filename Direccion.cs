@@ -10,5 +10,7 @@ namespace Naves_Invasoras_2
     {
         Derecha = 1,
         Izquierda = 2,
+        Arriba = 3,
+        Abajo = 4,
     }
 }

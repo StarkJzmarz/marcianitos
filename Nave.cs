@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Nave.cs
+using System;
 
 namespace Naves_Invasoras_2
 {
@@ -15,18 +12,22 @@ namespace Naves_Invasoras_2
 
         public void Mover(Direccion direccion)
         {
-            Borrar();
+            // Ya no borramos ni pintamos aquí. Solo actualizamos la posición lógica.
+            // BorrarDeBuffer(); // Opcional si no limpias el buffer completo cada frame
 
             if (direccion == Direccion.Derecha)
             {
-                Posicion.Incrementa_X();
+                // Agregar lógica de límites si es necesario, aunque el buffer lo maneja
+                if (Posicion.X + Tamaño.Ancho < Console.WindowWidth - 1) // Ejemplo de límite
+                    Posicion.Incrementa_X();
             }
             else if (direccion == Direccion.Izquierda)
             {
-                Posicion.Decrementa_X();
+                if (Posicion.X > 0) // Ejemplo de límite
+                    Posicion.Decrementa_X();
             }
 
-            Pintar();
+            // PintarEnBuffer(); // Esto se hará en el bucle de renderizado principal
         }
     }
 }

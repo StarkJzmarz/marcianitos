@@ -38,5 +38,10 @@ namespace Naves_Invasoras_2
         {
             return Puntaje;
         }
+
+        internal void IncrementarPuntaje(int v)
+        {
+            this.Puntaje += v;
+        }
     }
 }
